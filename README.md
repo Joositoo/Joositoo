@@ -86,10 +86,11 @@ Me apasiona construir aplicaciones web funcionales, bien estructuradas y con bue
 ---
 
 ## 📊 Lenguajes más usados
-
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Joositoo&layout=compact&theme=github_dark&hide_border=true" alt="Top Languages"/>
-</p>
+    <a href="https://github.com/Joositoo">
+      <img width="36%" src="https://github-readme-stats-iwzc.vercel.app/api/top-langs/?username=Joositoo&layout=compact&theme=tokyonight" alt="Top Languages"/>
+    </a>
+</p
 
 ---
 
