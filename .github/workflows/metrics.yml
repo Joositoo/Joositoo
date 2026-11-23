@@ -1,0 +1,38 @@
+name: Lenguajes más usados
+
+on:
+  # Se ejecuta todos los días a las 03:00 (hora UTC)
+  schedule:
+    - cron: "0 3 * * *"
+  # Permite lanzarlo a mano desde la pestaña Actions
+  workflow_dispatch:
+  # Y cada vez que haces push a la rama principal
+  push:
+    branches: ["main", "master"]
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    # Necesario para que la Action pueda subir el SVG generado al repo
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          # Archivo SVG que se generará en la raíz del repo
+          filename: metrics.languages.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: Joositoo
+
+          # Quita la cabecera y las estadísticas generales: solo lenguajes
+          base: ""
+          config_timezone: Europe/Madrid
+
+          # Plugin de lenguajes
+          plugin_languages: yes
+          plugin_languages_sections: most-used
+          plugin_languages_limit: 8
+          plugin_languages_details: percentage
+          plugin_languages_threshold: 0%
+          # Lenguajes que no quieres que aparezcan (añade o quita a tu gusto)
+          plugin_languages_ignored: html, css
